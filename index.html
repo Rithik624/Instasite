@@ -4,19 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram Follower Visualizer</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <div class="container">
         <h1>Instagram Follower Visualizer</h1>
-    </header>
-    <main>
-        <section class="input-section">
-            <label for="username">Enter Instagram Username:</label>
-            <input type="text" id="username" placeholder="Enter username">
-            <button id="submit">Submit</button>
-        </section>
-        <section class="results-section">
+        <div class="input-section">
+            <input type="text" id="username" placeholder="Enter Instagram Username">
+            <button onclick="fetchData()">Submit</button>
+        </div>
+        <div class="boxes">
             <div class="box" id="followers-box">
                 <h2>Followers</h2>
                 <ul id="followers-list"></ul>
@@ -25,12 +22,12 @@
                 <h2>Following</h2>
                 <ul id="following-list"></ul>
             </div>
-            <div class="box" id="not-following-back-box">
-                <h2>Not Following Back</h2>
-                <ul id="not-following-back-list"></ul>
+            <div class="box" id="non-mutuals-box">
+                <h2>Non-Mutuals</h2>
+                <ul id="non-mutuals-list"></ul>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
