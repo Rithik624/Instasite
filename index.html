@@ -4,33 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram Follower Visualizer</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .column {
+            width: 30%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 2px 2px 5px #aaa;
+        }
+        .input-container {
+            margin: 20px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Instagram Follower Visualizer</h1>
-    </header>
-    <main>
-        <section id="followers">
+    <h1>Instagram Follower Visualizer</h1>
+    <div class="input-container">
+        <form id="usernameForm">
+            <label for="username">Enter your Instagram username:</label>
+            <input type="text" id="username" name="username" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="container">
+        <div class="column" id="followers">
             <h2>Followers</h2>
-            <ul id="followers-list">
-                <!-- Followers will be listed here -->
-            </ul>
-        </section>
-        <section id="following">
+        </div>
+        <div class="column" id="following">
             <h2>Following</h2>
-            <ul id="following-list">
-                <!-- Following will be listed here -->
-            </ul>
-        </section>
-        <section id="not-following-back">
-            <h2>Not Following Back</h2>
-            <ul id="not-following-back-list">
-                <!-- Users not following back will be listed here -->
-            </ul>
-        </section>
-    </main>
+        </div>
+        <div class="column" id="not-mutual">
+            <h2>Not Mutual</h2>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
-
