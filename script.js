@@ -1,43 +1,90 @@
-document.getElementById('usernameForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting the traditional way
-
-    const username = document.getElementById('username').value;
-    
-    if (username) {
-        fetchInstagramData(username);
-    }
-});
-
-function fetchInstagramData(username) {
-    // Placeholder function to simulate fetching data from Instagram
-    console.log(`Fetching data for username: ${username}`);
-
-    // Example data (replace this with actual Instagram API calls)
-    const followers = ['follower1', 'follower2', 'follower3'];
-    const following = ['following1', 'following2', 'following3', 'follower1'];
-
-    displayData(followers, following);
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-function displayData(followers, following) {
-    const followersContainer = document.getElementById('followers');
-    const followingContainer = document.getElementById('following');
-    const notMutualContainer = document.getElementById('not-mutual');
+header {
+    background: #4CAF50;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
 
-    followersContainer.innerHTML = '<h2>Followers</h2>';
-    followingContainer.innerHTML = '<h2>Following</h2>';
-    notMutualContainer.innerHTML = '<h2>Not Mutual</h2>';
+footer {
+    background: #4CAF50;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: auto;
+}
 
-    followers.forEach(follower => {
-        followersContainer.innerHTML += `<p>${follower}</p>`;
-    });
+main {
+    padding: 2rem;
+    flex: 1;
+}
 
-    following.forEach(followingUser => {
-        followingContainer.innerHTML += `<p>${followingUser}</p>`;
-    });
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
 
-    const notMutual = following.filter(user => !followers.includes(user));
-    notMutual.forEach(user => {
-        notMutualContainer.innerHTML += `<p>${user}</p>`;
-    });
+form label {
+    margin-bottom: 0.5rem;
+}
+
+form input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 0.5rem 2rem;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form button:hover {
+    background: #45a049;
+}
+
+#results {
+    display: flex;
+    justify-content: space-around;
+}
+
+.result-column {
+    width: 30%;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.result-column h2 {
+    text-align: center;
+}
+
+.result-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.result-column li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ccc;
 }
