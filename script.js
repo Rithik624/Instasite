@@ -5,7 +5,7 @@ document.getElementById('submit').addEventListener('click', function() {
         return;
     }
 
-    // Placeholder function for fetching data
+    // Simulated function to fetch data
     fetchData(username).then(data => {
         displayData(data.followers, data.following);
     }).catch(error => {
@@ -14,7 +14,7 @@ document.getElementById('submit').addEventListener('click', function() {
 });
 
 async function fetchData(username) {
-    // Replace this URL with your actual API or scraping endpoint
+    // Placeholder URL; replace with your API or data source
     const response = await fetch(`https://api.example.com/instagram?username=${username}`);
     if (!response.ok) {
         throw new Error('Network response was not ok.');
