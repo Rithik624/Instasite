@@ -1,56 +1,40 @@
-document.getElementById('submit').addEventListener('click', function() {
+function fetchData() {
     const username = document.getElementById('username').value;
     if (!username) {
         alert('Please enter a username.');
         return;
     }
 
-    // Simulated function to fetch data
-    fetchData(username).then(data => {
-        displayData(data.followers, data.following);
-    }).catch(error => {
-        console.error('Error fetching data:', error);
-    });
-});
+    // Dummy data for demonstration purposes
+    const followers = ['user1', 'user2', 'user3', 'user4'];
+    const following = ['user2', 'user3', 'user5'];
 
-async function fetchData(username) {
-    // Placeholder URL; replace with your API or data source
-    const response = await fetch(`https://api.example.com/instagram?username=${username}`);
-    if (!response.ok) {
-        throw new Error('Network response was not ok.');
-    }
-    return await response.json();
-}
-
-function displayData(followers, following) {
+    const nonMutuals = followers.filter(user => !following.includes(user));
+    
+    // Populate followers list
     const followersList = document.getElementById('followers-list');
-    const followingList = document.getElementById('following-list');
-    const notFollowingBackList = document.getElementById('not-following-back-list');
-
-    // Clear previous content
     followersList.innerHTML = '';
-    followingList.innerHTML = '';
-    notFollowingBackList.innerHTML = '';
-
-    // Display followers
     followers.forEach(follower => {
         const li = document.createElement('li');
         li.textContent = follower;
         followersList.appendChild(li);
     });
 
-    // Display following
+    // Populate following list
+    const followingList = document.getElementById('following-list');
+    followingList.innerHTML = '';
     following.forEach(follow => {
         const li = document.createElement('li');
         li.textContent = follow;
         followingList.appendChild(li);
     });
 
-    // Calculate non-mutual followers
-    const notFollowingBack = followers.filter(f => !following.includes(f));
-    notFollowingBack.forEach(user => {
+    // Populate non-mutuals list
+    const nonMutualsList = document.getElementById('non-mutuals-list');
+    nonMutualsList.innerHTML = '';
+    nonMutuals.forEach(nonMutual => {
         const li = document.createElement('li');
-        li.textContent = user;
-        notFollowingBackList.appendChild(li);
+        li.textContent = nonMutual;
+        nonMutualsList.appendChild(li);
     });
 }
