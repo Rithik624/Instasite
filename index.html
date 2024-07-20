@@ -5,36 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram Follower Visualizer</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>Instagram Follower Visualizer</h1>
     </header>
     <main>
-        <form id="usernameForm">
-            <label for="username">Enter your Instagram username:</label>
-            <input type="text" id="username" name="username" required>
-            <button type="submit">Submit</button>
-        </form>
-        <div id="results">
-            <div class="result-column">
+        <section class="input-section">
+            <label for="username">Enter Instagram Username:</label>
+            <input type="text" id="username" placeholder="Enter username">
+            <button id="submit">Submit</button>
+        </section>
+        <section class="results-section">
+            <div class="box" id="followers-box">
                 <h2>Followers</h2>
-                <ul id="followersList"></ul>
+                <ul id="followers-list"></ul>
             </div>
-            <div class="result-column">
+            <div class="box" id="following-box">
                 <h2>Following</h2>
-                <ul id="followingList"></ul>
+                <ul id="following-list"></ul>
             </div>
-            <div class="result-column">
+            <div class="box" id="not-following-back-box">
                 <h2>Not Following Back</h2>
-                <ul id="notFollowingBackList"></ul>
+                <ul id="not-following-back-list"></ul>
             </div>
-        </div>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Instagram Follower Visualizer. All rights reserved.</p>
-    </footer>
     <script src="script.js"></script>
 </body>
 </html>
