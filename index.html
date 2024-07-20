@@ -4,46 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram Follower Visualizer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px;
-        }
-        .column {
-            width: 30%;
-            border: 1px solid #ccc;
-            padding: 10px;
-            box-shadow: 2px 2px 5px #aaa;
-        }
-        .input-container {
-            margin: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Instagram Follower Visualizer</h1>
-    <div class="input-container">
+    <header>
+        <h1>Instagram Follower Visualizer</h1>
+    </header>
+    <main>
         <form id="usernameForm">
             <label for="username">Enter your Instagram username:</label>
             <input type="text" id="username" name="username" required>
             <button type="submit">Submit</button>
         </form>
-    </div>
-    <div class="container">
-        <div class="column" id="followers">
-            <h2>Followers</h2>
+        <div id="results">
+            <div class="result-column">
+                <h2>Followers</h2>
+                <ul id="followersList"></ul>
+            </div>
+            <div class="result-column">
+                <h2>Following</h2>
+                <ul id="followingList"></ul>
+            </div>
+            <div class="result-column">
+                <h2>Not Following Back</h2>
+                <ul id="notFollowingBackList"></ul>
+            </div>
         </div>
-        <div class="column" id="following">
-            <h2>Following</h2>
-        </div>
-        <div class="column" id="not-mutual">
-            <h2>Not Mutual</h2>
-        </div>
-    </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Instagram Follower Visualizer. All rights reserved.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
